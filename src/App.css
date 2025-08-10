@@ -1,0 +1,309 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  list-style: none;
+}
+body{
+
+  background-image: url('./img/pixel-art-game-level-background-600nw-2553891639.webp');
+  
+}
+/* __CONTAINER__ */
+.app-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+      
+.stats-container{
+  padding: 45px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;  
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+#progress-bar{
+  width: 100%;
+  height: 10px;
+  background-color: #f3f3f3;
+  margin-top: 20px;
+  border-radius: 5px;
+  
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  margin: 70px auto 0 auto;
+}
+.stats{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+/* _________________________________________TODO-CREATE-INPUT-BUTTON_________________________________________ */
+
+#numbers{
+  width: 100px;
+  height: 100px;
+  background-color: #8c00ff6b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+ 
+}
+
+.details{
+  width: 100%;
+  
+}
+
+
+.todo-create {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+  flex-direction: row; /* column → row */
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 20px; /* input ilə button arasında boşluq üçün */
+  backdrop-filter: blur(50px);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.todo-input {
+  width: 400px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #f3f3f3;
+  background-color: transparent;
+  padding-left: 30px; 
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.todo-input:focus {
+  border-bottom: 2px solid #8c00ff;
+  box-shadow: 0 2px 0 0 #8c00ff;
+}
+
+.todo-input::placeholder {
+  color: #fff;
+  opacity: 0.6;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+.todo-button {
+  height: 40px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3B38A0;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(186, 157, 241, 0.3);
+}
+
+.todo-button:hover {
+  background-color: #9265E8;
+  box-shadow: 0 0 15px 5px rgba(89, 0, 255, 0.644); /* Parıltı */
+  transform: scale(1.15); /* Bir az böyüsün effekt üçün */
+}
+
+.todo-button:hover {
+  background-color: #692be0; /* hover zamanı rəng dəyişməsi */
+}
+/* _________________ALERTS_______________________________ */
+.success-alert {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  animation: fadein 0.3s ease-in-out;
+}
+
+.alert-message {
+  position: absolute;
+  margin-bottom: 250px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  animation: fadeInOut 5s ease forwards;
+  font-weight: bold;
+}
+
+.alert-message.error {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.alert-message.success {
+  background-color: #2ecc71;
+  color: white;
+}
+/*________________________________________KEYFRAMES__________________________________*/
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* _________________________________________TODO-LIST_________________________________________ */
+.todo-list-header {
+  margin-top: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  background: #ffffff22;
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.todo-list-div{
+  display: flex;
+  align-items: center;;
+}
+.todo-list-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+.todo-list-title {
+  position: relative;
+  display: inline-block;
+  transition: color 0.25s ease;
+}
+
+.todo-list-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #8c00ff; /* progress bar rəngi ilə uyğun */
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.4s ease-in-out;
+}
+
+.todo-list-title.completed {
+  color: #999; /* tamamlanan todo üçün solğun rəng */
+}
+
+.todo-list-title.completed::after {
+  transform: scaleX(1);
+}
+
+
+
+
+/*__________________Todo-Icons_________________ */
+.todo-list-icons {
+  display: flex;
+  gap: 12px;
+  margin-left: 330px;
+}
+
+.todo-list-icons svg {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  color: white;
+}
+
+.todo-list-icons svg:hover {
+  transform: scale(1.3);
+  color: #ff0000;
+}
+/* ___________________________________EDIT-TODO___________________________________ */
+.edit-todo-input {
+  background-color: transparent;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #f3f3f3;
+  outline: none;
+  transition: all 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.edit-todo-input.active {
+  width: 200px;
+  padding: 6px 10px;
+  color: #ffffff;
+  font-size: 20px;
+  transform: scaleX(1);
+  font-weight: bold;
+}
+
+
+
+
+
