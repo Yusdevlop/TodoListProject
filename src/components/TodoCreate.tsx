@@ -1,6 +1,7 @@
 import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodoToFirebase, createTodo } from "../redux/todoSlice";
+import {  createTodo } from "../redux/todoSlice";
+// addTodoToFirebase,
 import type { TodoTypes } from "../Types/Types";
 import TodoList from './TodoList'
 import "../App.css"
@@ -26,12 +27,12 @@ function todoCreate() {
 
   
   const handleButtonClick = () => {
-    addTodoToFirebase(auth.currentUser!, {
-      id: Math.floor(Math.random() * 1532),
-      content: inputValue,
-      completed: false,
-      userId: auth.currentUser!.uid
-    });
+    // addTodoToFirebase(auth.currentUser!, {
+    //   id: Math.floor(Math.random() * 1532),
+    //   content: inputValue,
+    //   completed: false,
+    //   userId: auth.currentUser!.uid
+    // });
     
 
     if (inputValue.trim().length === 0) {
