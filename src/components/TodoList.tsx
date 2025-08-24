@@ -1,45 +1,44 @@
 import Todo from "./Todo"
 import type { TodoTypes } from "../Types/Types"
-import { collection, doc, getDocs, query, where } from "firebase/firestore";
-import { auth, db } from "../config/Firebase";
-import { useEffect, useState } from "react";
-
+import { useSelector } from "react-redux";
+// import { collection, doc, getDocs, query, where } from "firebase/firestore";
+// import { auth, db } from "../config/Firebase";
+// import { useEffect, useState } from "react";
 function TodoList() {
-  const [todos, setTodos] = useState<TodoTypes[]>([]);
+  // const [todos, setTodos] = useState<TodoTypes[]>([]);
+  const { todos } = useSelector((state: any) => state.todo);
+  // async function getTodos() {
+  //   const uid = auth.currentUser?.uid;
+  //   if (!uid) {
+  //     console.log("User not logged in");
+  //     return;
+  //   }
 
-  async function getTodos() {
-    const uid = auth.currentUser?.uid;
-    if (!uid) {
-      console.log("User not logged in");
-      return;
-    }
+    // const q = query(
+    //   collection(db, "todos"),
+    //   where("userId", "==", uid)
+    // );
 
-    const q = query(
-      collection(db, "todos"),
-      where("userId", "==", uid)
-    );
+    // const querySnapshot = await getDocs(q);
 
-    const querySnapshot = await getDocs(q);
+  //   const todosArray: TodoTypes[] = querySnapshot.docs.map(doc => {
+  //     const data = doc.data();
+  //     return {
+  //       id: Number(doc.id),
+  //       content: data.content,
+  //       completed: data.completed,
+  //       userId: data.userId
+  //     };
+  //   });
 
-    const todosArray: TodoTypes[] = querySnapshot.docs.map(doc => {
-      const data = doc.data();
-      return {
-        id: Number(doc.id),
-        content: data.content,
-        completed: data.completed,
-        userId: data.userId
-      };
-    });
+    // setTodos(todosArray);
+  // }
 
-    setTodos(todosArray);
-  }
+  // useEffect(() => {
+  //   getTodos();
+  // }, []);
 
-  useEffect(() => {
-    getTodos();
-  }, []);
-
-  console.log(todos, "todoss");
-
+  
   return (
     <div>
       {todos.length === 0 && <p>Heç bir todo yoxdur</p>}
