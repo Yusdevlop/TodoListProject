@@ -1,10 +1,16 @@
 import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createTodo } from "../redux/todoSlice";
+import { addTodoToFirebase, createTodo } from "../redux/todoSlice";
 import type { TodoTypes } from "../Types/Types";
 import TodoList from './TodoList'
-
-
+import "../App.css"
+import { CiLogout } from "react-icons/ci";
+import { auth} from "../config/Firebase";
+import { signOut } from "firebase/auth";
+import {  useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 function todoCreate() {
 
   const [inputValue, setInputValue] = useState<string>('');
@@ -14,16 +20,25 @@ function todoCreate() {
   const total =todos.length;
   const completedTodos = todos.filter((todo:any) => todo.completed).length;
   const progress = total > 0 ? (completedTodos / total) * 100 : 0;
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState<boolean>(false);
+
+  
   const handleButtonClick = () => {
+    addTodoToFirebase(auth.currentUser!, {
+      id: Math.floor(Math.random() * 1532),
+      content: inputValue,
+      completed: false
+    });
+    
+
     if (inputValue.trim().length === 0) {
       setMessage('Zəhmət olmasa bir şey yaz!');
       setErrorMessage(true);
-      setTimeout(() => setMessage(''), 3000);
+      
       return;
     }
-
   setMessage('Todo əlavə edildi!');
   setErrorMessage(false);
 
@@ -33,23 +48,35 @@ function todoCreate() {
     completed: false
   };
   
- 
 
   dispatch(createTodo(payload));
   setInputValue('');
   setTimeout(() => setMessage(''), 3000);
 };
+  const logout = async () => {
+    setLoading(true);
+    toast.success("Çıxış uğurlu oldu!");
+    setTimeout(() => {
+      signOut(auth);
+      setLoading(false);
+      navigate("/");
+    }, 2000);
+  }
   return (  
-    
     <div >
-        
         <div id="container">
            {message && (
             <div className={`alert-message ${errorMessage ? 'error' : 'success'}`}>
               {message}
             </div>
         )}
-
+          <CiLogout onClick={logout} style={{ position: "absolute", top: "50px", right: "50px", cursor: "pointer", fontSize: "50px", color:"#ffff"  }} />
+          {loading && (
+                    
+                    <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
+                      <CircularProgress />
+                    </Box>
+                  )}
           <div className="stats-container">
             <div  className="details">
               <h1>Todo App</h1>

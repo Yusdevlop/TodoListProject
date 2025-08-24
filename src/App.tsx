@@ -1,13 +1,16 @@
 import './App.css'
-import './index.css';
-import TodoCreate from './components/TodoCreate'
+import Router from './config/Router';
+import { ToastContainer} from 'react-toastify';
+
 
 function App() {
 
   return (
-    <div className='app-container'>
-      <TodoCreate />
-    </div>
+      <div className='app-container'>
+        <Router />
+        <ToastContainer position='top-right' autoClose={3000} />
+      </div>
+    
   )
 }
 

@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Poppins;
+}
+
+
+body{
+    background: url(../img/pixel-art-game-level-background-600nw-2553891639.webp);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(105, 46, 139);
+    
+    
+}
+.contaniersignup{
+    color: #fff;
+    width:  400px;
+    height: 450px;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid #ffffff93;
+    backdrop-filter: blur(20px);
+}
+.contanierlogin{
+    color: #fff;
+    width:  400px;
+    height: 400px;
+    border-radius: 40px;
+    background-color: transparent;
+    border: 1px solid #ffffff93;
+    backdrop-filter: blur(20px);
+    
+    
+}
+.login h1{
+    color: aliceblue;
+    text-align: center;
+    margin-top:30px;
+} 
+.signup h1{
+    color: aliceblue;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.inputbox1::placeholder{
+    color: #fff;
+}
+.inputbox2::placeholder{
+    color: #fff;
+}
+.inputbox1{
+    padding-left: 20px;
+    color: aliceblue;
+    width : 73%;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    margin-left: 50px;
+    margin-top: 25px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255,.2);
+    padding: 17px;
+
+}
+
+
+.inputbox2{
+    margin-left: 50px;
+    padding-left: 20px;
+    color: aliceblue;
+    margin-top: 20px;
+    width:73% ;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255,.2);
+    padding: 17px;
+}
+
+.inputbox {
+    position: relative;
+}
+.inputbox i{
+    position: absolute;
+    right: 70px;
+    top: 68%;
+    font-size: 18px;
+    transform: translateY(-50%);
+}
+
+.remember-forgotSignUp{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    margin-top: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.remember-forgot{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    color: aliceblue;
+    margin-top: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+.checkboxSignUp{
+    background-color: none;
+
+    border: 1px solid #ffffff93;
+  }
+
+#rememberMe {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border: 1px solid #fff;
+  border-radius: 3px; /* optional */
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+/* tik işarəsi */
+#rememberMe:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
+}
+#loginSubmitButton{
+    width: 50%;
+    font-size: medium;
+    margin-top: 25px;
+    background-color: transparent;
+    border: 1px solid #ffffff93;
+    color: #fff;
+    padding: 7px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+     transition: .2s ease-in-out;
+}
+#loginSubmitButton:hover{
+    background-color: #fff;
+    color: rgb(105, 46, 139);
+    font-weight: 600;
+    transition: .2s ease-in-out;
+    width: 51%;
+    padding: 10px 7px;
+}
+.forgot{
+    color: #fff;
+}
+
+.sumbitbox{
+    margin-top: 30px;
+    width: 40%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+    transition: 0.2s ease-in-out;
+}
+.sumbitbox:hover{
+    margin-top: 30px;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: large;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #ffffff93;
+}
+#loginForGoogle {
+  width: 50%;
+  font-size: medium;
+  margin-top: 25px;
+  background-color: transparent;
+  border: 1px solid #ffffff93;
+  color: #fff;
+  padding: 7px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* ikonla yazı arası məsafə */
+  overflow: hidden;
+  
+}
+
+
+#loginForGoogle:hover {
+
+
+    transition: .3s ease-in-out;
+    background-color: #fff;
+    color: rgb(105, 46, 139);
+}
+#loginForGoogle:hover .googleIcon{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: left .3s ease-in-out, transform .3s ease-in-out;
+    scale: 1.3;
+}
+#loginForGoogle:hover .btnText {
+    opacity: 0;
+}
+
+
+
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+   
+}
+
+
+
+.donthaveaccount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.youhaveaccount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    color: #fff;
+}
+
+
+.register{
+    color: #fff;
+    font-weight: 600;
+}
+
+.containerBox{
+    border-radius: 40px;
+    height: 540px;
+    background-color: transparent;
+    border: 1px solid #ffffff93;
+    backdrop-filter: blur(10px); /* blur effekti */
+  -webkit-backdrop-filter: blur(10px); /* Safari üçün */
+
+}
+
+.inputbox i{
+    color: #fff;
+}
