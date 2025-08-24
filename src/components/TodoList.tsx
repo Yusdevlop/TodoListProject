@@ -1,6 +1,6 @@
 import Todo from "./Todo"
 import type { TodoTypes } from "../Types/Types"
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, doc, getDocs, query, where } from "firebase/firestore";
 import { auth, db } from "../config/Firebase";
 import { useEffect, useState } from "react";
 

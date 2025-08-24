@@ -29,7 +29,8 @@ function todoCreate() {
     addTodoToFirebase(auth.currentUser!, {
       id: Math.floor(Math.random() * 1532),
       content: inputValue,
-      completed: false
+      completed: false,
+      userId: auth.currentUser!.uid
     });
     
 
@@ -45,7 +46,8 @@ function todoCreate() {
   const payload: TodoTypes = {
     id: Math.floor(Math.random() * 1532),
     content: inputValue,
-    completed: false
+    completed: false,
+    userId: auth.currentUser!.uid
   };
   
 

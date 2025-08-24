@@ -10,7 +10,7 @@ interface TodoProps {
 }
 
 function Todo({ todoProps }: TodoProps) {
-  const { id, content, completed } = todoProps;
+  const { id, content, completed , userId } = todoProps;
   const dispatch = useDispatch();
   const [newEditTodo, setNewEditTodo] = useState<string>(content);
   const [editTodo, setEditTodo] = useState<boolean>(false);
@@ -20,10 +20,11 @@ function Todo({ todoProps }: TodoProps) {
 
   const handleEdit = () => {
     const payload: TodoTypes = {
-      id,
+      id: id,
       content: newEditTodo,
-      completed
-    };
+      completed: completed,
+      userId: userId
+    }; 
     dispatch(todoSlice.actions.editTodo(payload));
     setEditTodo(false);
   };
